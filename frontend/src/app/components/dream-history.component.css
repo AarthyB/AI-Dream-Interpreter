@@ -1,0 +1,99 @@
+.history-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.emoji {
+  font-size: 1.2rem;
+  margin-right: 4px;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.card {
+  background-color: #1e1e2f;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  color: #eee;
+  line-height: 1.6;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  background: #2d2d44;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.buttons button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: #3f51b5;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #bbb;
+}
+
+.followup-group {
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #222c3c;
+  border-radius: 8px;
+}
+
+.followup-card {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #2f3b52;
+  border-radius: 6px;
+}
+
+.buttons {
+  margin-top: 8px;
+}
+
+.buttons button {
+  margin-right: 6px;
+  padding: 4px 10px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: #3f51b5;
+}

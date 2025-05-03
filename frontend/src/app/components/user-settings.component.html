@@ -1,0 +1,41 @@
+<page-wrapper>
+    <div class="settings-container">
+        <h2 class="settings-title">⚙️ User Settings</h2>
+      
+        <div class="form-group">
+          <label>Your Name:</label>
+          <input [(ngModel)]="name" placeholder="Enter your name" />
+        </div>
+      
+        <div class="form-group">
+          <label>Select Theme:</label>
+          <div class="theme-options">
+            <div 
+              *ngFor="let theme of availableThemes"
+              [class.selected]="selectedTheme === theme"
+              (click)="selectedTheme = theme"
+              class="theme-box"
+            >
+              {{ theme | titlecase }}
+            </div>
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <label>Select Overlay Effect:</label>
+          <div class="theme-options">
+            <div 
+              *ngFor="let overlay of availableOverlays"
+              [class.selected]="selectedOverlay === overlay"
+              (click)="selectedOverlay = overlay"
+              class="theme-box"
+            >
+              {{ overlay | titlecase }}
+            </div>
+          </div>
+        </div>
+      
+        <button (click)="saveSettings()" class="save-btn">💾 Save Settings</button>
+      </div>
+      
+</page-wrapper>

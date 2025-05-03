@@ -1,0 +1,91 @@
+.container {
+    padding: 20px;
+    background-color: #1e1e2f;
+    color: #ffffff;
+    border-radius: 10px;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    background: #2a2a3c;
+    color: #fff;
+    resize: vertical;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 16px;
+    background-color: #5c6bc0;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3f51b5;
+  }
+  
+  .response {
+    margin-top: 15px;
+    background-color: #2d2d44;
+    padding: 12px;
+    border-radius: 6px;
+    line-height: 1.6;
+  }
+  
+  h3 {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .confirmation-card {
+    margin-top: 20px;
+    background-color: #2d2d44;
+    padding: 15px;
+    border-radius: 6px;
+    color: #d0f0c0;
+  }
+  
+  .nav-options {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .nav-btn {
+    padding: 8px 14px;
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .nav-btn:hover {
+    background-color: #3f51b5;
+  }
+  
+  .input {
+    width: 788px;
+    height: 197px;
+  }
+
+  .loader-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .loading-message {
+    margin-top: 10px;
+    font-style: italic;
+    color: #ccc;
+  }
+  

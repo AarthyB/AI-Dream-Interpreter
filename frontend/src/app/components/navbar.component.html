@@ -1,0 +1,20 @@
+<div [class.sidebar-collapsed]="isCollapsed">
+  <h2 class="app-title">🌙 Dream Interpreter</h2>
+ <span><button class="collapse-btn" (click)="toggleSidebar()">
+    {{ isCollapsed ? '➡️' : '⬅️' }}
+  </button></span>
+  <aside *ngIf="!isCollapsed" class="sidebar">
+    <nav class="nav-links">
+    <div>
+      <a *ngIf="!auth.isLoggedIn()" routerLink="/login">Login</a>
+      <a *ngIf="!auth.isLoggedIn()" routerLink="/signup">Sign Up</a>
+      <a *ngIf="auth.isLoggedIn()" routerLink="/journal">Journal</a>
+      <a *ngIf="auth.isLoggedIn()" routerLink="/life-story">Life Story</a>
+      <a *ngIf="auth.isLoggedIn()" routerLink="/history">History</a>
+      <a *ngIf="auth.isLoggedIn()" routerLink="/insights">Insights</a>
+      <a *ngIf="auth.isLoggedIn()" routerLink="/settings">Settings</a> 
+    </div>
+    <button *ngIf="auth.isLoggedIn()" (click)="logout()" class="button-main">Logout</button>
+  </nav>
+</aside>
+</div>

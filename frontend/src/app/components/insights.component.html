@@ -1,0 +1,46 @@
+<!-- <page-wrapper>
+<div class="chart-container">
+    <h2>🔮 Symbols</h2>
+    <canvas id="symbolChart"></canvas>
+  
+    <div class="symbol-explanation">
+        💡 <strong>What do these mean?</strong><br/>
+        • These are the most common dream symbols found in your journal.<br/>
+        • We use AI and NLP to detect names, places, and important words.<br/>
+        • The taller the bar, the more often it appeared across your dreams.<br/>
+        • It helps you discover recurring subconscious themes 🌌
+      </div>      
+</div>
+<div class="chart-container">
+        <h2>❤️ Emotion Trends</h2>
+        <canvas id="emotionChart"></canvas>
+</div>
+<button (click)="loadCharts()" class="refresh-button">🔄 Refresh Insights</button>  
+</page-wrapper> -->
+
+<page-wrapper>
+<div class="insights-container">
+  <h2>🧠 Insights</h2>
+
+  <div class="charts">
+    <div class="chart-card">
+      <h3>Emotions in Your Dreams</h3>
+      <canvas id="emotionChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+      <h3>Most Frequent Dream Symbols</h3>
+      <canvas id="symbolChart"></canvas>
+      <div class="symbol-explanation">
+        💡 <strong>What do these mean?</strong><br/>
+        • These are the most common dream symbols found in your journal.<br/>
+        • We use AI and NLP to detect names, places, and important words.<br/>
+        • The taller the bar, the more often it appeared across your dreams.<br/>
+        • It helps you discover recurring subconscious themes 🌌
+      </div> 
+    </div> 
+  </div>
+</div>
+<button (click)="loadCharts()" class="refresh-button">🔄 Refresh Insights</button>  
+
+</page-wrapper>

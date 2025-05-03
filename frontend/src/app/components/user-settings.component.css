@@ -1,0 +1,81 @@
+.settings-container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2.5rem;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 4rem auto;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  text-align: center;
+}
+
+.settings-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: #1f1f2e;
+  color: white;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.theme-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.theme-box {
+  background: #2e2e4d;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.theme-box:hover {
+  background: #3f3f5f;
+}
+
+.theme-box.selected {
+  background: #00e5ff;
+  color: black;
+  font-weight: bold;
+}
+
+.save-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, #00e5ff, #00c3ff);
+  color: black;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  transition: background 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: linear-gradient(135deg, #00c3ff, #00e5ff);
+}

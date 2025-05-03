@@ -1,0 +1,33 @@
+<page-wrapper>
+<div class="container">
+  <h2 class="title">📘 Your Life Story</h2>
+
+  <div *ngIf="story && !isEditing" class="card">
+    <p class="preview">{{ showFull ? story : (story | slice:0:300) + '...' }}</p>
+
+    <div class="buttons">
+      <button (click)="toggleFull()">
+        {{ showFull ? '🔽 Collapse' : '🔍 View Full Story' }}
+      </button>
+      <button (click)="startEdit()">✏️ Edit</button>
+      <button (click)="deleteStory()">❌ Delete</button>
+    </div>
+  </div>
+
+  <div *ngIf="!story && !isEditing" class="card">
+    <p>No life story saved yet.</p>
+    <button (click)="startEdit()">➕ Add One</button>
+  </div>
+
+  <div *ngIf="isEditing" class="card">
+    <textarea [(ngModel)]="editedStory" rows="6" placeholder="Write your background, thoughts, and life events..."></textarea>
+
+    <div class="buttons">
+      <button (click)="saveStory()">💾 Save</button>
+      <button (click)="cancelEdit()">❌ Cancel</button>
+    </div>
+  </div>
+
+  <div *ngIf="status" class="status">{{ status }}</div>
+</div>
+</page-wrapper>

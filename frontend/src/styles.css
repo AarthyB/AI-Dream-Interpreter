@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #0f172a;
+  color: white;
+}
+
+body.theme-peacock {
+  background: #044512;
+  background: linear-gradient(198deg, rgba(4, 69, 18, 1) 25%, rgba(7, 7, 105, 1) 75%, rgba(4, 4, 15, 1) 100%);
+  background-attachment: fixed;
+}
+
+body.theme-deepnight {
+  background: linear-gradient(135deg, #0D1B2A, #000000);
+  background-attachment: fixed;
+}
+
+body.theme-greymist {
+  background: #000000;
+  background: linear-gradient(293deg,rgba(0, 0, 0, 1) 26%, rgba(78, 78, 82, 1) 59%, rgba(0, 0, 0, 1) 100%);
+  background-attachment: fixed;
+}
+
+body.theme-plasma {
+  background: #b80909;
+  background: linear-gradient(135deg,rgba(184, 9, 9, 1) 0%, rgba(26, 3, 3, 1) 50%, rgba(145, 25, 25, 1) 100%);
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.card {
+  background-color: #1e293b;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.input, textarea, input[type="password"] {
+  width: 100%;
+  max-width: -webkit-fill-available;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 1rem;
+  background-color: #334155;
+  color: white;
+}
+
+.button {
+  background-color: #7c3aed;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #5b21b6;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1e293b;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.navbar a {
+  color: white;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-style: italic;
+}

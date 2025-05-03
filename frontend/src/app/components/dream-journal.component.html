@@ -1,0 +1,57 @@
+<page-wrapper>
+<div class="container">
+    <h2 class="title">📝 Dream Journal</h2>
+  
+    <textarea [(ngModel)]="dreamText" rows="5" placeholder="Type your dream..." class="input"></textarea>
+    
+    <button (click)="submitDream()" class="button">Interpret</button>
+  
+    <div *ngIf="clarificationStage">
+      <h3>🤔 Help me understand your dream better:</h3>
+      <div *ngFor="let q of clarificationQuestions; let i = index">
+        <p>{{ q }}</p>
+        <input [(ngModel)]="clarificationAnswers[i]" placeholder="Your clarification..." class="input" />
+      </div>
+      <button class="button" (click)="submitClarifications()">Continue</button>
+    </div>
+    
+    <div *ngIf="result" class="response">
+      <p><strong>Interpretation:</strong> {{ result }}</p>
+  
+      <div *ngIf="questions.length > 0 && !showSuccessMessage">
+        <h3>🧠 Let's explore together:</h3>
+        <div *ngFor="let q of questions; let i = index">
+          <p>{{ q }}</p>
+          <input [(ngModel)]="answers[i]" placeholder="Your response..." class="input" />
+        </div>
+  
+        <button (click)="submitFollowUps()" class="button">Submit Answers</button>
+      </div>
+    </div>
+
+    <div *ngIf="result && !rating">
+      <p><strong>How accurate was this interpretation?</strong></p>
+      <select [(ngModel)]="userRating" class="input">
+        <option [value]="0">Select rating</option>
+        <option [value]="1">⭐ Poor</option>
+        <option [value]="2">⭐⭐ Fair</option>
+        <option [value]="3">⭐⭐⭐ Good</option>
+        <option [value]="4">⭐⭐⭐⭐ Very Good</option>
+        <option [value]="5">⭐⭐⭐⭐⭐ Excellent</option>
+      </select>
+      <button class="button" (click)="submitRating()">Submit Rating</button>
+    </div>
+    
+    <div *ngIf="showSuccessMessage" class="confirmation-card">
+      <p>✅ Your responses have been saved. Thank you!</p>
+      <p class="small">Your insights help personalize future interpretations 🌱</p>
+    
+      <div class="nav-options">
+        <button routerLink="/history" class="nav-btn">📜 View History</button>
+        <button routerLink="/insights" class="nav-btn">🔮 See Insights</button>
+        <button (click)="reset()" class="nav-btn">📝 New Dream</button>
+      </div>
+    </div>
+    
+  </div>
+</page-wrapper>

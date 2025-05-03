@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: dream-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python backend/app.py
+    envVars:
+      - key: OPENAI_API_KEY
+        value: ${OPENAI_API_KEY}
+
+  - type: web
+    name: dream-frontend
+    env: static
+    staticPublishPath: frontend/dist

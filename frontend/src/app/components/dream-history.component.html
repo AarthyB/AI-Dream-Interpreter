@@ -1,0 +1,65 @@
+<page-wrapper>
+<div class="history-container">
+  <h2 class="title">📜 Dream History</h2>
+
+  <div class="columns">
+    <!-- Left column: Dreams -->
+    <div class="column">
+      <h3>🛌 Dreams</h3>
+      <div *ngFor="let dream of (showAllDreams ? dreams : dreams.slice(0, 3))" class="card">
+        <div *ngIf="editingId === dream.id">
+          <textarea [(ngModel)]="dream.editText" rows="2"></textarea>
+          <textarea [(ngModel)]="dream.interpretationEdit" rows="3"></textarea>
+          <div class="buttons">
+            <button (click)="saveEdit(dream)">💾 Save</button>
+            <button (click)="cancelEdit()">❌ Cancel</button>
+          </div>
+        </div>
+        <div *ngIf="editingId !== dream.id">
+          <p><strong>Dream:</strong> {{ dream.dream }}</p>
+          <p><strong>Interpretation:</strong> {{ dream.interpretation }}</p>
+          <p><strong>Emotion:</strong> {{ dream.emotion }} <span class="emoji"><strong>{{ dream.emoji }}</strong></span></p>
+          <div class="buttons">
+            <button (click)="startEdit(dream)">✏️ Edit</button>
+            <button (click)="deleteDream(dream.id)">🗑️ Delete</button>
+          </div>
+        </div>
+      </div>
+      <button *ngIf="dreams.length > 3" (click)="showAllDreams = !showAllDreams">
+        {{ showAllDreams ? '🔽 Collapse Dreams' : '🔍 View All Dreams' }}
+      </button>
+    </div>
+
+    <!-- Right column: Follow-ups -->
+    <div class="column">
+      <h3>🧠 Follow-Up Answers</h3>
+      <div *ngFor="let group of groupedFollowups" class="followup-group">
+        <h4>🕒 {{ group.timestamp }}</h4>
+
+        <div *ngFor="let f of group.followups" class="followup-card">
+
+          <div *ngIf="editingFollowupId !== f.id">
+            <p><strong>Q:</strong> {{ f.question }}</p>
+            <p><strong>A:</strong> {{ f.answer }}</p>
+            <div class="buttons">
+              <button (click)="startEditFollowup(f)">✏️ Edit</button>
+              <button (click)="deleteFollowup(f)">🗑️ Delete</button>
+            </div>
+          </div>
+          <div *ngIf="editingFollowupId === f.id">
+            <p><strong>Q:</strong> {{ f.question }}</p>
+            <textarea [(ngModel)]="editedFollowups[f.id]" rows="2"></textarea>
+            <div class="buttons">
+              <button (click)="saveFollowupEdit(f)">💾 Save</button>
+              <button (click)="cancelEditFollowup()">❌ Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button *ngIf="followups.length > 3" (click)="showAllFollowups = !showAllFollowups">
+        {{ showAllFollowups ? '🔽 Collapse Follow-Ups' : '🔍 View All Follow-Ups' }}
+      </button>
+    </div>
+  </div>
+</div>
+</page-wrapper>

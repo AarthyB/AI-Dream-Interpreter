@@ -1,0 +1,20 @@
+# Node and Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+backend/firebase_key.json
+backend/.env
+
+
+# Logs
+logs/
+
+.env
+*.env
+*.json
