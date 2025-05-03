@@ -8,7 +8,7 @@ import json
 import os, json
 from firebase_admin import credentials, initialize_app
 
-firebase_key_str = os.environ.get("FIREBASE_CREDENTIALS")
+firebase_key_str = os.getenv("FIREBASE_CREDENTIALS")
 
 if firebase_key_str:
     # Render: decode the environment variable
