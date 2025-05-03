@@ -31,6 +31,9 @@ export class DreamJournalComponent {
     this.result = '';
     this.questions = [];
     this.answers = [];
+    this.clarificationQuestions = [];
+    this.clarificationAnswers = [];
+    this.clarificationStage = false;
  
     this.api.clarifyDream(this.dreamText).subscribe(res => {
       if (res.questions.length > 0) {

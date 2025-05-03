@@ -22,6 +22,10 @@ import { UserSettingsComponent } from './components/user-settings.component';
 import { PageWrapperComponent } from './components/page-wrapper.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { LoaderComponent } from './components/loader.component';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +54,14 @@ import { LoaderComponent } from './components/loader.component';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [ApiService, AuthService],
+  
+  providers: [
+    ApiService,
+    AuthService,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
+  ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule {}

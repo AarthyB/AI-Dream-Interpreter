@@ -12,8 +12,8 @@ def clarify():
     data = request.get_json()
     dream = data.get("dream")
 
-    prompt = """You are a dream clarifier. If the dream is vague, confusing, or missing details, "
-        "ask 1-2 clarification questions. If it's clear and understandable, reply with:\n"
+    prompt = """You are a dream clarifier. You task it to glean the dream. If the dream is vague, confusing, if it does not have a proper flow or missing details, "
+        "ask 1-2 clarification questions. Some examples of unclear dream can be, "Just testing", "I know where it is", etc. If it's clear and understandable, reply with:\n"
         "\"The dream is clear. No clarification needed.\""""
 
     messages = [
