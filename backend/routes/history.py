@@ -36,7 +36,7 @@ def get_history():
 
 
 @history_blueprint.route("/<int:dream_id>", methods=["PATCH"])
-@cross_origin(origins="http://localhost:4200", supports_credentials=True)
+@cross_origin(origins=["https://dream-frontend-fiuw.onrender.com","http://localhost:4200"], supports_credentials=True)
 def edit_dream(dream_id):
     token = request.headers.get("Authorization")
     if not token:

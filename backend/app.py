@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 
 # ✅ Strict CORS config for Angular
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:4200"}},
+CORS(app, resources={r"/api/*": {"origins": ["http://localhost:4200", "https://dream-frontend-fiuw.onrender.com"]}},
      supports_credentials=True,
      expose_headers=["Authorization"],
      allow_headers=["Content-Type", "Authorization"])
