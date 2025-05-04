@@ -12,3 +12,4 @@ services:
     name: dream-frontend
     env: static
     staticPublishPath: frontend/dist
+    buildCommand: cd frontend && npm install && npm run build -- --configuration production
