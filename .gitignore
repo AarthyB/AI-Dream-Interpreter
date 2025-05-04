@@ -17,4 +17,4 @@ logs/
 
 .env
 *.env
-*.json
+firebase_key.json
