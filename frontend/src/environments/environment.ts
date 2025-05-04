@@ -8,5 +8,5 @@ export const environment = {
     messagingSenderId: "1007299598750",
     appId: "1:1007299598750:web:a69a816b73a7231b781e8f"
   },
-  apiBase: "https://dream-backend-ww9v.onrender.com"
+  apiBase: "http://localhost:5000/api"
 };
