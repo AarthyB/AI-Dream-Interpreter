@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-
+import os
 from routes.interpret import interpret_blueprint
 from routes.symbols import symbols_blueprint
 from routes.life_story import life_story_blueprint
@@ -41,4 +41,4 @@ def home():
     return "Dream Interpreter API is running!"
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
