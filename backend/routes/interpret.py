@@ -10,7 +10,7 @@ from utils.db import connect_db
 interpret_blueprint = Blueprint("interpret", __name__)
 
 @interpret_blueprint.route("/", methods=["POST"])
-@cross_origin(origins=["https://dream-frontend-fiuw.onrender.com", "http://localhost:4200"], supports_credentials=True)
+# @cross_origin(origins=["https://dream-frontend-fiuw.onrender.com", "http://localhost:4200"], supports_credentials=True)
 
 def interpret():
     token = request.headers.get("Authorization")
