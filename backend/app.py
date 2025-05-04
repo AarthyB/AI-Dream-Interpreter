@@ -15,13 +15,15 @@ from routes.feedback import feedback_bp
 
 app = Flask(__name__)
 
-
-# ✅ Strict CORS config for Angular
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:4200", "https://dream-frontend-fiuw.onrender.com"]}},
-     supports_credentials=True,
-     expose_headers=["Authorization"],
-     allow_headers=["Content-Type", "Authorization"])
-
+CORS(app, resources={r"/api/*": {
+    "origins": [
+        "http://localhost:4200",
+        "https://dream-frontend-fiuw.onrender.com"
+    ],
+    "supports_credentials": True,
+    "allow_headers": ["Content-Type", "Authorization"],
+    "expose_headers": ["Authorization"]
+}})
 
 # ✅ Register routes
 app.register_blueprint(interpret_blueprint, url_prefix="/api/interpret")
