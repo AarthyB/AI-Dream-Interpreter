@@ -2,9 +2,17 @@ import spacy
 from flask import Blueprint, jsonify, request
 from utils.db import connect_db
 from utils.auth import verify_token
+import en_core_web_sm
 
 symbols_blueprint = Blueprint("symbols", __name__)
-nlp = spacy.load("en_core_web_sm")
+
+
+try:
+    nlp = en_core_web_sm.load()
+except OSError:
+    from spacy.cli import download
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
 
 FORBIDDEN_POS = {"PRON", "DET", "AUX", "ADP"}
 
