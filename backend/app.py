@@ -16,10 +16,7 @@ from routes.feedback import feedback_bp
 app = Flask(__name__)
 
 CORS(app, resources={r"/api/*": {
-    "origins": [
-        "http://localhost:4200",
-        "https://dream-frontend-fiuw.onrender.com"
-    ],
+    "origins": "*",
     "supports_credentials": True,
     "allow_headers": ["Content-Type", "Authorization"],
     "expose_headers": ["Authorization"]
