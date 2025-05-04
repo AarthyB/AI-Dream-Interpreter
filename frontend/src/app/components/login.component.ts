@@ -37,7 +37,7 @@ export class LoginComponent {
   
     sendPasswordResetEmail(auth, this.email)
       .then(() => {
-        this.snackBar.open('Password reset email sent ✅', 'Close', { duration: 3000 });
+        this.snackBar.open('Password reset email sent ✅', 'Close', { duration: 1000 });
       })
       .catch(error => {
         this.snackBar.open('Error: ' + error.message, 'Close', { duration: 3000 });
