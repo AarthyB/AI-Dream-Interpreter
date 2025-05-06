@@ -50,7 +50,7 @@ filelock==3.16.1
 firebase-admin==6.2.0
 FLAML==2.2.0
 flask==2.3.3
-flask-Cors==4.0.0
+flask-cors==4.0.0
 flatbuffers==25.2.10
 fonttools==4.56.0
 frozenlist==1.5.0
@@ -71,6 +71,7 @@ google-resumable-media==2.7.2
 googleapis-common-protos==1.70.0
 grpcio==1.71.0
 grpcio-status==1.71.0
+gunicorn
 h11==0.14.0
 h5py==3.13.0
 hf-xet==1.0.3
