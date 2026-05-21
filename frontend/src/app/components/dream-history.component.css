@@ -97,3 +97,96 @@ textarea {
 .buttons button:hover {
   background-color: #3f51b5;
 }
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+@media (max-width: 768px) {
+  .history-container {
+    padding: 14px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .columns {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .column {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .buttons button {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .followup-group {
+    padding: 8px;
+  }
+
+  .followup-card {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .history-container {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .columns {
+    gap: 10px;
+  }
+
+  .card {
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 5px;
+  }
+
+  textarea {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .buttons button {
+    flex: 1;
+    min-width: 80px;
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+
+  .timestamp {
+    font-size: 11px;
+  }
+
+  .followup-group {
+    padding: 6px;
+    border-radius: 6px;
+  }
+
+  .followup-card {
+    padding: 6px;
+    border-radius: 5px;
+  }
+}

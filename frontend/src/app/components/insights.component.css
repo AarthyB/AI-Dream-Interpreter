@@ -54,3 +54,69 @@
     min-width: 300px;
   }
   
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+@media (max-width: 768px) {
+  .insights-container {
+    padding: 1.25rem;
+  }
+
+  .charts {
+    gap: 1.25rem;
+  }
+
+  .chart-card {
+    min-width: unset;
+    width: 100%;
+    flex: unset;
+    padding: 0.85rem;
+  }
+
+  .chart-container {
+    padding: 14px;
+  }
+
+  .refresh-button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .insights-container {
+    padding: 0.75rem;
+  }
+
+  .charts {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .chart-card {
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    min-width: unset;
+  }
+
+  .chart-container {
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .symbol-explanation {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .refresh-button {
+    font-size: 13px;
+    padding: 9px 14px;
+    border-radius: 4px;
+    width: 100%;
+  }
+}

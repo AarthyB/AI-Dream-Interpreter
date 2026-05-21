@@ -79,3 +79,80 @@ input {
 .save-btn:hover {
   background: linear-gradient(135deg, #00c3ff, #00e5ff);
 }
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 1.75rem;
+    margin: 2rem auto;
+    border-radius: 16px;
+    max-width: 90%;
+  }
+
+  .settings-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .theme-options {
+    gap: 0.6rem;
+  }
+
+  .theme-box {
+    min-width: 100px;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .save-btn {
+    font-size: 1.05rem;
+    padding: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-container {
+    padding: 1.25rem;
+    margin: 1rem auto;
+    border-radius: 12px;
+    max-width: 95%;
+  }
+
+  .settings-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  input {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    /* Prevent zoom on focus in iOS */
+    font-size: max(16px, 0.9rem);
+  }
+
+  .theme-options {
+    gap: 0.5rem;
+  }
+
+  .theme-box {
+    /* Two per row on mobile */
+    flex: 1 1 calc(50% - 0.5rem);
+    min-width: unset;
+    padding: 0.65rem 0.5rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .save-btn {
+    font-size: 1rem;
+    padding: 0.85rem;
+    border-radius: 10px;
+    margin-top: 1.25rem;
+  }
+}

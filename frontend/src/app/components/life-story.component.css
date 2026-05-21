@@ -54,3 +54,72 @@ textarea {
   margin-top: 10px;
   color: #90ee90;
 }
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  .title {
+    font-size: 19px;
+  }
+
+  .card {
+    padding: 13px;
+  }
+
+  textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .buttons button {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .card {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+
+  textarea {
+    font-size: 13px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .buttons button {
+    flex: 1;
+    min-width: 80px;
+    padding: 6px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+  .status {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+}

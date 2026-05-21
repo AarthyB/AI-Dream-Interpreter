@@ -18,3 +18,29 @@
     color: #4e4cbf; /* deeper tone on hover */
   }
   
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+@media (max-width: 768px) {
+  .forgot-password-wrapper {
+    margin-top: 8px;
+  }
+
+  .forgot-password {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .forgot-password-wrapper {
+    margin-top: 6px;
+  }
+
+  .forgot-password {
+    font-size: 12px;
+    padding: 4px 0;
+    /* Larger tap target for mobile */
+    display: inline-block;
+    min-height: 36px;
+    line-height: 36px;
+  }
+}

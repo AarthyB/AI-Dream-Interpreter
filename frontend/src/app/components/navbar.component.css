@@ -1,121 +1,123 @@
+/* =============================================
+   NAVBAR / SIDEBAR
+   ============================================= */
 
 .app-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.8rem;
-    font-weight: normal;
-    color: #f5f5f5;
-    text-align: center;
-    text-shadow: 
-      0 0 6px rgba(255, 255, 255, 0.6), 
-      0 0 8px rgba(173, 216, 230, 0.4); 
-    margin-bottom: 1rem;
-    transition: all 0.6s ease;
-    animation: dreamyPulse 5s ease-in-out infinite; /* 🌙 Soft pulsing animation */
-    cursor: pointer;
-  }
-  
-  /* On Hover — Sparkle! */
-  .app-title:hover {
-    color: #ffffff;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  font-weight: normal;
+  color: #f5f5f5;
+  text-align: center;
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.6),
+    0 0 8px rgba(173, 216, 230, 0.4);
+  margin-bottom: 1rem;
+  transition: all 0.6s ease;
+  animation: dreamyPulse 5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.app-title:hover {
+  color: #ffffff;
+  text-shadow:
+    0 0 10px #ffffff,
+    0 0 20px #ff99ff,
+    0 0 30px #99ccff,
+    0 0 40px #ff99ff;
+  transform: scale(1.05);
+}
+
+@keyframes dreamyPulse {
+  0%, 100% {
     text-shadow:
-      0 0 10px #ffffff,
-      0 0 20px #ff99ff,
-      0 0 30px #99ccff,
-      0 0 40px #ff99ff;
-    transform: scale(1.05);
+      0 0 8px rgba(255, 255, 255, 0.5),
+      0 0 12px rgba(173, 216, 230, 0.4);
+    transform: scale(1);
   }
-  
-  /* Gentle breathing shimmer */
-  @keyframes dreamyPulse {
-    0%, 100% {
-      text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.5),
-        0 0 12px rgba(173, 216, 230, 0.4);
-      transform: scale(1);
-    }
-    50% {
-      text-shadow:
-        0 0 12px rgba(255, 255, 255, 0.8),
-        0 0 20px rgba(173, 216, 230, 0.6);
-      transform: scale(1.03);
-    }
+  50% {
+    text-shadow:
+      0 0 12px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(173, 216, 230, 0.6);
+    transform: scale(1.03);
   }
-/* Main Container */
-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  
-  .collapse-btn:hover {
-    transform: scale(1.2);
-  }
-  
-  /* Sidebar Glass Effect */
-  .sidebar {
-    width: 250px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 60px;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.1);
-    padding: 2rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.5s ease;
-    position: relative;
-    overflow: hidden;
-    justify-content: space-between;
-    margin-top: 1rem;
-  }
-  
-  /* Dreamy Highlight */
-  .sidebar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 160%;
-    height: 160%;
-    background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0));
-    transform: translateX(-50%) rotate(30deg);
-    pointer-events: none;
-  }
-  
-  /* Navigation Links */
-  .nav-links {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.3rem;
-    text-align: center;
-    padding: 0.8rem 1rem;
-    border-radius: 20px;
-    font-family: 'Cormorant Garamond', serif;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-  }
-  
-  /* Main Logout Button */
-  .nav-links {
+}
+
+/* ── Desktop wrapper ── */
+:host > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.collapse-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.collapse-btn:hover {
+  transform: scale(1.2);
+}
+
+/* ── Desktop sidebar: normal flow left column ── */
+.sidebar {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 60px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.1);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s ease;
+  position: relative;   /* normal flow — does NOT overlay content */
+  overflow: hidden;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 160%;
+  height: 160%;
+  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+  transform: translateX(-50%) rotate(30deg);
+  pointer-events: none;
+}
+
+.nav-links {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
   margin-top: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  border-radius: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
 
 .button-main {
@@ -125,43 +127,146 @@ div {
   padding: 0.7rem 1rem;
   width: 80%;
   border-radius: 20px;
-  margin-bottom: 2rem; /* ⭐ added to give breathing space */
+  margin-bottom: 2rem;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Cormorant Garamond', serif;
 }
 
-  
-  .button-main:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
+.button-main:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* ── Desktop: collapsed state ── */
+.sidebar-collapsed .sidebar {
+  width: 80px;
+  border-radius: 30px;
+}
+
+.sidebar-collapsed .nav-links a {
+  display: none;
+}
+
+.sidebar-collapsed .button-main {
+  display: none;
+}
+
+
+/* =============================================
+   MOBILE (≤ 768px)
+   TS sets isCollapsed=true on load → sidebar
+   hidden by *ngIf. Collapse-btn toggles it.
+   Sidebar slides in as a fixed overlay drawer.
+   ============================================= */
+@media (max-width: 768px) {
+
+  /* Top bar */
+  :host > div {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    z-index: 100;
   }
-  
-  /* Sidebar Collapsed Mode */
-  .sidebar-collapsed .sidebar {
-    width: 80px;
-    border-radius: 30px;
+
+  .app-title {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    flex: 1;
+    text-align: center;
   }
-  
-  .sidebar-collapsed .nav-links a {
-    display: none;
+
+  .collapse-btn {
+    font-size: 1.5rem;
+    flex-shrink: 0;
   }
-  
+
+  /*
+   * Sidebar: fixed drawer that overlays content.
+   * Starts hidden because *ngIf="!isCollapsed" and
+   * isCollapsed=true on mobile. When user taps the
+   * button, isCollapsed=false → sidebar appears here.
+   * Use a low z-index so it sits BELOW the top bar.
+   */
+  .sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 220px !important;
+    border-radius: 0 40px 40px 0 !important;
+    margin-top: 0;
+    padding: 4.5rem 1rem 2rem;
+    z-index: 99;   /* below sticky top bar (100) */
+    justify-content: flex-start;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .nav-links {
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem !important;
+    padding: 0.65rem 1rem;
+    display: block !important;
+  }
+
+  .button-main {
+    display: block !important;
+    width: 85%;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Desktop collapsed rules don't apply on mobile */
+  .sidebar-collapsed .sidebar,
+  .sidebar-collapsed .nav-links a,
   .sidebar-collapsed .button-main {
-    display: none;
+    all: revert;
   }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 80px;
-      border-radius: 30px;
-    }
-    .sidebar h2, 
-    .nav-links a, 
-    .button-main {
-      display: none;
-    }
+}
+
+/* ── Small phones (≤ 480px) ── */
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.4rem;
   }
-  
+
+  .sidebar {
+    width: 190px !important;
+  }
+
+  .nav-links a {
+    font-size: 1rem !important;
+  }
+}
+
+/* ── Landscape phones ── */
+@media (max-width: 768px) and (orientation: landscape) {
+  .sidebar {
+    width: 170px !important;
+    padding-top: 3.5rem;
+    overflow-y: auto;
+  }
+
+  .nav-links {
+    gap: 0.25rem;
+    margin-top: 0.25rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem !important;
+    padding: 0.4rem 0.75rem;
+  }
+}

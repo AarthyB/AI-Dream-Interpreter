@@ -24,3 +24,30 @@
     }
   }
   
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 0.85rem;
+    border-radius: 0.5rem;
+    /* Remove side margin on very small screens — use full width */
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}
+
+/* Landscape phones */
+@media (max-width: 768px) and (orientation: landscape) {
+  .page-container {
+    padding: 1rem 1.25rem;
+    min-height: auto;
+  }
+}
