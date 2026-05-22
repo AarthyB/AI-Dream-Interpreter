@@ -1,8 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { ApiService } from './services/api.service';
 import { LoaderService } from './services/loader.service';
 import { Subscription } from 'rxjs';
+import { NavbarComponent } from './components/navbar.component';
+
 
 @Component({
   selector: 'app-root',
@@ -10,14 +12,15 @@ import { Subscription } from 'rxjs';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit, OnDestroy{
+  @ViewChild('navbarComponent') navbarComponent!: NavbarComponent;
   private ctx!: CanvasRenderingContext2D;
   private canvas!: HTMLCanvasElement;
   private particles: any[] = [];
   private width!: number;
   private height!: number;
   private animationId: number | null = null;
-  private loadSubscription: Subscription;
-  private userSubscription: Subscription;
+  private loadSubscription!: Subscription;
+  private userSubscription!: Subscription;
   isLoading = false;
 
   constructor(private auth: AuthService, private api: ApiService, private loader: LoaderService) {}
@@ -46,7 +49,9 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
   startOverlay(overlay: string) {
-    cancelAnimationFrame(this.animationId);
+    if (this.animationId !== null) {
+      cancelAnimationFrame(this.animationId);
+    }
     this.animationId = null;
   
     if (overlay === 'particles') {

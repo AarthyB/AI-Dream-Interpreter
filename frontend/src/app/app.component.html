@@ -1,8 +1,8 @@
-<div class="app-container">
+<div class="app-container" [class.sidebar-open]="!navbarComponent.isCollapsed">
     <canvas id="particles-canvas"></canvas>
-    <app-navbar></app-navbar>
+    <app-navbar #navbarComponent></app-navbar>
     <app-loader *ngIf="isLoading"></app-loader>
     <div class="main">
-    <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </div>
 </div>

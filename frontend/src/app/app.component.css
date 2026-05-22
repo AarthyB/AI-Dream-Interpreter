@@ -1,27 +1,27 @@
 #particles-canvas {
-    position: fixed; /* ✅ Full screen */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* ✅ Behind everything */
-    pointer-events: none;
-    opacity: 0.5;
-  }
-  
-  .app-container {
-    display: flex;
-    min-height: 100vh;
-  }
-  
-  .main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center; /* horizontally center */
+  align-items: center;
   padding: 2rem;
   overflow-y: auto;
-  }
+}
 
 /* ===== MOBILE RESPONSIVENESS ===== */
 
@@ -32,7 +32,14 @@
 
   .main {
     padding: 1.25rem;
-    align-items: stretch; /* full width content on tablet */
+    align-items: stretch;
+    transition: margin-left 0.35s ease;
+    margin-left: 0;
+  }
+
+  /* When sidebar drawer is open, push main content to the right */
+  .app-container.sidebar-open .main {
+    margin-left: 220px;
   }
 }
 
@@ -44,12 +51,17 @@
   .main {
     padding: 0.85rem;
     align-items: stretch;
-    /* Prevent content from getting clipped by mobile browser chrome */
     min-height: -webkit-fill-available;
+    transition: margin-left 0.35s ease;
+    margin-left: 0;
+  }
+
+  /* Matches the 190px sidebar width on small phones */
+  .app-container.sidebar-open .main {
+    margin-left: 190px;
   }
 
   #particles-canvas {
-    /* Reduce opacity slightly on mobile to save battery/perf */
     opacity: 0.35;
   }
 }
@@ -58,5 +70,9 @@
 @media (max-width: 768px) and (orientation: landscape) {
   .main {
     padding: 0.75rem 1.25rem;
+  }
+
+  .app-container.sidebar-open .main {
+    margin-left: 170px;
   }
 }
