@@ -21,8 +21,6 @@
 
 AI Dream Interpreter bridges classical psychological theory with modern machine intelligence. Unlike static dictionary-based tools that map symbols like "water = emotions", this app generates **empathetic, personalized interpretations** that evolve with your dream history and life context.
 
-Built as part of **CSCI 5800 – Generative AI (Spring 2025)** by Aarthy Besant Arunkumar & Kelly Bohan.
-
 ---
 
 ## ✨ Features
@@ -138,15 +136,6 @@ API will be available at `http://localhost:5000`
 The app is deployed on Render (free tier — may take ~30s to wake up on first load):
 
 👉 **[https://dream-frontend-fiuw.onrender.com](https://dream-frontend-fiuw.onrender.com)**
-
----
-
-## 👩‍💻 Team
-
-| Name | Contributions |
-|---|---|
-| **Aarthy Besant Arunkumar** | Full Angular frontend · Flask REST backend · SQLite models · OpenAI API integration · Render deployment · UI/UX design (Journal, History, Insights) |
-| **Kelly Bohan** | GPT prompt engineering · Clarifier agent pipeline · Emotion classifier evaluation · User testing · Frontend styling & animations |
 
 ---
 
