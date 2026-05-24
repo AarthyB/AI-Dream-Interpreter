@@ -42,21 +42,21 @@ AI Dream Interpreter bridges classical psychological theory with modern machine 
 ```
 ┌─────────────────────────────────────────────┐
 │              Angular Frontend               │
-│   Journal · History · Insights · Settings  │
+│   Journal · History · Insights · Settings   │
 └──────────────────┬──────────────────────────┘
                    │ HTTP (REST)
 ┌──────────────────▼──────────────────────────┐
 │              Flask Backend                  │
 │                                             │
-│   ┌─────────────┐     ┌─────────────────┐  │
-│   │  Clarifier  │────▶│   Interpreter   │  │
-│   │    Agent    │     │     Agent       │  │
-│   └─────────────┘     └────────┬────────┘  │
-│                                │           │
-│   ┌──────────────┐   ┌─────────▼────────┐  │
-│   │  SpaCy NER   │   │  GPT-4o-mini     │  │
-│   │  (Symbols)   │   │  (OpenAI API)    │  │
-│   └──────────────┘   └──────────────────┘  │
+│   ┌─────────────┐     ┌─────────────────┐   │
+│   │  Clarifier  │────▶│   Interpreter   │  │ 
+│   │    Agent    │     │     Agent       │   │
+│   └─────────────┘     └────────┬────────┘   │
+│                                │            │
+│   ┌──────────────┐   ┌─────────▼────────┐   │
+│   │  SpaCy NER   │   │  GPT-4o-mini     │   │
+│   │  (Symbols)   │   │  (OpenAI API)    │   │
+│   └──────────────┘   └──────────────────┘   │
 │                                             │
 │   SQLite (dreams)   Firebase (auth/JWT)     │
 └─────────────────────────────────────────────┘
